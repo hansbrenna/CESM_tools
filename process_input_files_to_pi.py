@@ -2,7 +2,12 @@
 # -*- coding: utf-8 -*-
 """
 Created on Wed Jan 10 13:49:00 2018
-
+This program takes the NetCDF-files in a directory mathcing the pattern given 
+to glob and processes them to make 'repeating year' forcing files for CESM2. 
+At present the files need to contain a single year at monthly resolution and it 
+is set up to process CMIP6 emission files. Tweaks to parse_file_name() needed 
+to process other file types. Tweaks to days_since() needed to process different
+time reoslutions.
 @author: hanbre
 """
 
@@ -11,7 +16,6 @@ import numpy as np
 import xarray as xr
 import pandas as pd
 import netCDF4
-import matplotlib.pyplot as plt
 import os
 import glob
 
